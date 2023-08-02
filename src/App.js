@@ -5,17 +5,32 @@ import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 import React from "react";
 
-const defaultTodos = [
-  { text: "Curso React", completed: false },
-  { text: "Curso Javascript", completed: false },
-  { text: "Curso manipulacion de Arrays Js", completed: false },
-  { text: "Curso Node.js", completed: true },
-  { text: "Creacion pagina empresa", completed: false }
-];
+// const defaultTodos = [
+//   { text: "Curso React", completed: false },
+//   { text: "Curso Javascript", completed: false },
+//   { text: "Curso manipulacion de Arrays Js", completed: false },
+//   { text: "Curso Node.js", completed: true },
+//   { text: "Creacion pagina empresa", completed: false }
+// ];
+
+// localStorage.setItem('Organizador_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('Organizador_V1');
+
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
-  const [searchValue, setSearchValue] = React.useState("");
+  const localStorageTodos = localStorage.getItem('Organizador_V1');
+
+  let parsedTodos;
+
+  if (!localStorageTodos){
+      localStorage.setItem('Organizador_V1', JSON.stringify([]));
+      parsedTodos =[];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
+  const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -28,14 +43,19 @@ function App() {
      return todoText.includes (searchText);
     }
   );
-  
+
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('Organizador_V1', JSON.stringify(newTodos));
+    setTodos(newTodos);
+  };  
+
     const completeTodo =(text) => {
       const newTodos = [...todos];
       const todoIndex = newTodos.findIndex(
         (todo) => todo.text == text
       );
       newTodos[todoIndex].completed = true;
-      setTodos(newTodos);
+      saveTodos(newTodos);
     };
 
     const deleteTodo =(text) => {
@@ -44,7 +64,7 @@ function App() {
         (todo) => todo.text == text
       );
       newTodos.splice(todoIndex, 1);
-      setTodos(newTodos);
+      saveTodos(newTodos);
     }
 
 
