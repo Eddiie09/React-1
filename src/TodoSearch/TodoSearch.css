@@ -1,0 +1,28 @@
+.TodoSearch {
+    padding: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9FB; /* Cambiamos el color de fondo */
+    border-radius: 2px;
+    border: 2px solid #F9FB; /* Cambiamos el color del borde */
+    margin: 0 24px;
+    height: 64px;
+    width: calc(100% - 62px);
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Quitamos la coma duplicada */
+    font-weight: 400;
+    color: rgba(7, 7, 7, 0.83); /* Cambiamos el color del texto a blanco */
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25); /* Corregimos el valor de la opacidad */
+}
+
+.TodoSearch::placeholder {
+    color: rgba(7, 7, 7, 0.83); /* Cambiamos el color del texto de placeholder a blanco */
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+}
+
+.TodoSearch:focus {
+    outline-color: rgb(233, 227, 233);
+}
