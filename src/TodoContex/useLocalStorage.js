@@ -44,3 +44,14 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage };
+
+// localStorage.removeItem('Organizador');
+// const defaultTodos = [
+//   { text: "Curso React", completed: false },
+//   { text: "Curso Javascript", completed: false },
+//   { text: "Curso manipulacion de Arrays Js", completed: false },
+//   { text: "Curso Node.js", completed: true },
+//   { text: "Creacion pagina empresa", completed: false }
+// ];
+
+// localStorage.setItem('Organizador', JSON.stringify(defaultTodos));
