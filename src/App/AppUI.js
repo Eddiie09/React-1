@@ -7,6 +7,7 @@ import { TodoLoading } from '../TodosLoading'
 import { TodosError } from '../TodoError';
 import { EmptyTodos } from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { Modal } from '../Modal';
 import { TodoContext } from '../TodoContex';
 
 
@@ -17,6 +18,8 @@ const {
   searchedTodos,
   completeTodo,
   deleteTodo,
+  openModal,
+  setOpenModal,
 } = React.useContext(TodoContext);
   return (
     <>
@@ -46,10 +49,15 @@ const {
               />
             ))}
           </TodoList>
-        
-   
       
       <CreateTodoButton />
+
+     {openModal && (
+       <Modal>
+       funcionalidad
+
+     </Modal>
+     )}
     </>
   );
 }
