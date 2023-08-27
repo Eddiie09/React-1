@@ -4,7 +4,7 @@ function EmptyTodos() {
    
     return (
        <p>Crear tarea</p> 
-    )
+    );
         
   }
 

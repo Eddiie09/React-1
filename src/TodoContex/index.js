@@ -11,7 +11,7 @@ function TodoProvider({ children }) {
     error,
   } = useLocalStorage("Organizador", []);
   const [searchValue, setSearchValue] = React.useState("");
-  const [openModal, setOpenModal] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(false);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -21,6 +21,13 @@ function TodoProvider({ children }) {
     const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);
   });
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({text, completed: false,
+    })
+    saveTodos(newTodos);
+  }
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
@@ -45,6 +52,7 @@ function TodoProvider({ children }) {
         searchValue,
         setSearchValue,
         searchedTodos,
+        addTodo,
         completeTodo,
         deleteTodo,
         openModal,

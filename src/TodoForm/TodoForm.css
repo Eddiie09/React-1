@@ -1,0 +1,85 @@
+/* Estilos para el formulario */
+.CustomForm {
+  width: 90%;
+  max-width: 300px;
+  background-color: #FAFA;
+  padding: 33px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CustomLabel {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Press Start 2P", cursive;
+  color: rgba(7, 7, 7, 0.83);
+  margin-bottom: 24px;
+}
+
+.CustomTextarea {
+  background-color: #f9f9f9;
+  border: 2px solid #FAFA;
+  border-radius: 2px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  color: rgba(0, 0, 0, 0.667);
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+  height: 96px;
+  width: calc(100% - 25px);
+}
+
+.CustomTextarea::placeholder {
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.CustomTextarea:focus {
+  outline: #61DAFA;
+}
+
+.CustomButtonContainer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.CustomButton {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 2px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.CustomButton--add {
+  background-color: #61DAFA;
+  color: #000000;
+  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}
+
+.CustomButton--add:hover {
+  background-color: #75e2ff;
+}
+
+.CustomButton--cancel {
+  background-color: transparent;
+  color: #1e1e1e;
+}
+
+.CustomButton--cancel:hover {
+  color: #61DAFA;
+}

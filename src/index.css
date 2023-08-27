@@ -1,7 +1,7 @@
 body {
   background-image: url('/public/1000_F_589216512_h8PIwfiyCCHRYSonpmNhzu720cL3RCjo.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-position: center center;
   margin: 0;
   padding: 0;

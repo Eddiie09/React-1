@@ -1,26 +1,17 @@
-import React from 'react';
+
 import './CreateTodoButton.css';
-import { TodoContext } from '../TodoContex';
 
-function CreateTodoButton(){
-   const {
-    openModal,
-    setOpenModal
-   } = React.useContext(TodoContext);
-   return (
+function CreateTodoButton({ setOpenModal }) {
+  return (
     <button
-    onClick={() => {
-        console.log("Hiciste click");
-        if (!openModal){
-            setOpenModal(true);
-
-        }else {
-            setOpenModal(false);
+      className="CreateTodoButton"
+      onClick={
+        () => {
+          setOpenModal(state => !state);
         }
-    }}
-    
+      }
     >+</button>
-   )
-    
-    }
-    export {CreateTodoButton};
+  );
+}
+
+export { CreateTodoButton };

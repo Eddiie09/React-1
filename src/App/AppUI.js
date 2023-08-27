@@ -7,6 +7,7 @@ import { TodoLoading } from '../TodosLoading'
 import { TodosError } from '../TodoError';
 import { EmptyTodos } from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoForm } from '../TodoForm';
 import { Modal } from '../Modal';
 import { TodoContext } from '../TodoContex';
 
@@ -50,11 +51,11 @@ const {
             ))}
           </TodoList>
       
-      <CreateTodoButton />
+      <CreateTodoButton setOpenModal={setOpenModal}/>
 
      {openModal && (
        <Modal>
-       funcionalidad
+      <TodoForm />
 
      </Modal>
      )}
